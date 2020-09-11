@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = {
-  extends: 'octane'
+  extends: 'octane',
+  'no-implicit-this': {
+    allow: ['collapsed']
+  }
 };

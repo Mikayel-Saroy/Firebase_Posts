@@ -1,0 +1,30 @@
+<BsNavbar
+  @type="dark"
+  @backgroundColor="dark"
+  @collapsed={{this.collapsed}}
+  @onCollapse={{fn (mut collapsed) true}}
+  @onExpand={{fn (mut collapsed) false}} as |navbar|>
+  <div class="navbar-header">
+    {{navbar.toggle}}
+    <LinkTo @route="index" @class="navbar-brand">Home</LinkTo>
+  </div>
+  <navbar.content>
+    <navbar.nav as |nav|>
+      {{#if this.session.isAuthenticated}}
+        <nav.item>
+          <nav.link-to @route="my-profile">My Profile</nav.link-to>
+        </nav.item>
+        <li class="nav-item active">
+          <button {{on 'click' (fn this.logout)}} type="button" class="btn btn-default text-white">Logout</button>
+        </li>
+      {{else}}
+        <nav.item>
+          <nav.link-to @route="sign-in">Sign In</nav.link-to>
+        </nav.item>
+        <nav.item>
+          <nav.link-to @route="sign-up">Sign Up</nav.link-to>
+        </nav.item>
+      {{/if}}
+    </navbar.nav>
+  </navbar.content>
+</BsNavbar>
