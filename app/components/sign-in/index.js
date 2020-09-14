@@ -7,6 +7,7 @@ import { tracked } from '@glimmer/tracking';
 export default class SignInComponent extends Component {
   @service session;
   @service firebaseApp;
+  @service router;
 
   @tracked email;
   @tracked password;
@@ -16,7 +17,7 @@ export default class SignInComponent extends Component {
     const auth = await this.firebaseApp.auth();
     try {
       await auth.signInWithEmailAndPassword(this.email, this.password);
-      console.log('success');
+      this.router.transitionTo('authenticated.my-profile');
     } catch (error) {
       console.log(error);
     }

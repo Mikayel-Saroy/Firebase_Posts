@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import SignedIn from "../components/abstract-classes/signed-in";
 
-export default class SignInRoute extends Route {
+export default class SignInRoute extends SignedIn {
 }
