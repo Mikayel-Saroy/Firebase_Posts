@@ -6,9 +6,10 @@ import { inject as service } from '@ember/service';
 export default class PostFormComponent extends Component {
   @service store;
   @service session;
+  @service firebaseApp;
+
   @tracked title;
   @tracked body;
-  @service firebaseApp;
 
   @action
   async onSubmit() {
@@ -20,7 +21,8 @@ export default class PostFormComponent extends Component {
       body,
       userEmail: user.email
     });
-
     await post.save();
+    this.title = "";
+    this.body = "";
   }
 }

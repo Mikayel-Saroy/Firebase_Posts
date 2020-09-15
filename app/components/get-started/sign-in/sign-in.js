@@ -17,6 +17,8 @@ export default class SignInComponent extends Component {
     const auth = await this.firebaseApp.auth();
     try {
       await auth.signInWithEmailAndPassword(this.email, this.password);
+      this.email = "";
+      this.password = "";
       this.router.transitionTo('authenticated.my-profile');
     } catch (error) {
       console.log(error);

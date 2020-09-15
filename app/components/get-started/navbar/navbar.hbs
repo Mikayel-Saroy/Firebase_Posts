@@ -1,9 +1,9 @@
 <BsNavbar
-  @type="dark"
-  @backgroundColor="dark"
-  @collapsed={{this.collapsed}}
-  @onCollapse={{fn (mut collapsed) true}}
-  @onExpand={{fn (mut collapsed) false}} as |navbar|>
+        @type="dark"
+        @backgroundColor="dark"
+        @collapsed={{this.collapsed}}
+        @onCollapse={{fn (mut collapsed) true}}
+        @onExpand={{fn (mut collapsed) false}} as |navbar|>
   <div class="navbar-header">
     {{navbar.toggle}}
     <LinkTo @route="authenticated.my-profile" @class="navbar-brand">Home</LinkTo>
