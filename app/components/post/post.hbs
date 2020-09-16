@@ -1,4 +1,5 @@
 <div class="show_post">
+  <p class="post_author">{{@post.userEmail}}</p>
   <div class="post_title">
     <LinkTo @route="authenticated.show-post" @model={{@post.id}}>
       <h5 {{on "click" this.getCurrentData}}>

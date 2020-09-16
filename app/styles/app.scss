@@ -186,6 +186,14 @@ body {
       color: $black-color;
     }
   }
+
+  .post_author {
+    margin: 6px 0 0 500px;
+    position: absolute;
+    color: $tertiary-color;
+    font-size: 18px;
+    font-family: Courier, serif;
+  }
 }
 
 
