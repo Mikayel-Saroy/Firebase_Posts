@@ -1,11 +1,13 @@
 $black-color: rgb(21, 21, 21);
+$red_color: #C62828;
+$red_color_light: #d32f2f;
 $primary-color: #005a9e;
 $secondary-color: #2b88d8;
 $secondary-tertiary-color: #62a0d0;
 $tertiary-color: #b0d0e8;
 $quaternary-color: #eff6fc;
-
 $posts-width: 700px;
+
 
 // Mixins
 @mixin header_icons_sample {
@@ -64,6 +66,53 @@ body {
 }
 
 
+// Component -> Get-Started -> Sign-In/Sign-Up
+.registration {
+  text-align: center;
+  margin: 50px auto auto auto;
+  width: 360px;
+  height: 270px;
+  background-color: $tertiary-color;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+
+  .registration_head {
+    background-color: $secondary-color;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    height: 60px;
+    margin: -30px 0 15px 0;
+
+    h3 {
+      font-size: 30px;
+      color: $quaternary-color;
+      padding-top: 15px;
+    }
+  }
+
+  input {
+    margin-top: 20px;
+    width: 300px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  button {
+    margin-top: 20px;
+    @include button_sample;
+  }
+
+  .registration_password_option {
+    position: absolute;
+    margin: 196px 0 0 100px;
+    font-family: Courier, serif;
+    font-size: 14px;
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
+
+
 // Component -> Get-Started -> Header
 .header {
   background-color: $primary-color;
@@ -97,7 +146,7 @@ body {
 }
 
 
-// Component -> ### -> Posts
+// Component -> Posts
 .show_post {
   margin: 25px auto 25px auto;
   width: $posts-width;
@@ -140,7 +189,7 @@ body {
 }
 
 
-// Component -> ### -> Add-Post
+// Component -> Add-Post
 .add_post {
   margin: 25px auto 10px auto;
   width: $posts-width;
@@ -178,8 +227,8 @@ body {
   }
 
   .add_post_button button {
-      @include button_sample;
-      margin: 0 10px 15px 570px;
+    @include button_sample;
+    margin: 0 10px 15px 570px;
   }
 
   .success_message {
@@ -190,17 +239,36 @@ body {
 }
 
 
-// Other
-.edit_button {
-  width: $posts-width;
-  margin: auto;
+// Mix -- Edit-Delete-Buttons
+.edit_delete_buttons {
+  text-align: center;
+  margin-left: 430px;
 
-  button {
+  p {
+    position: absolute;
+    margin: -23px 0 0 -45px;
+    font-size: 12px;
+    font-family: Courier, serif;
+    color: $red_color;
+  }
+
+  .edit_button button {
     @include button_sample;
-    margin-left: 570px;
+    cursor: pointer;
+  }
+
+  .delete_button {
+    button {
+      @include button_sample;
+      background-color: $red_color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $red_color_light;
+      }
+    }
   }
 }
-
 
 
 

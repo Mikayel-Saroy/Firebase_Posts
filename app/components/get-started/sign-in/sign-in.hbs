@@ -1,8 +1,15 @@
-<div class="row py-5">
-  <div class="col">
-    <h4>Sign In</h4>
+<div class="registration">
+  <b class="registration_password_option" {{on "click" this.changePasswordType}}>{{this.passwordTypeButtonName}}</b>
+  <div class="registration_head">
+    <h3>Sign In</h3>
+  </div>
+  <div>
     <Input @value={{this.email}} placeholder="Enter Your Username"/>
-    <Input @value={{this.password}} placeholder="Enter Your Password"/>
+  </div>
+  <div>
+    <Input @value={{this.password}} type="{{this.passwordType}}" placeholder="Enter Your Password"/>
+  </div>
+  <div>
     <button {{on "click" this.signIn}}>Submit</button>
   </div>
 </div>

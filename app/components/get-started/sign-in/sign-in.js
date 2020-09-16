@@ -4,6 +4,10 @@ import firebase from 'firebase/app';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
+const HIDE_TYPE = "password";
+const SHOW_TYPE = "text";
+const HIDE_PASS = "hide";
+const SHOW_PASS = "show";
 
 export default class SignInComponent extends Component {
   @service session;
@@ -13,6 +17,19 @@ export default class SignInComponent extends Component {
 
   @tracked email;
   @tracked password;
+  @tracked passwordType = HIDE_TYPE;
+  @tracked passwordTypeButtonName = SHOW_PASS;
+
+  @action
+  changePasswordType() {
+    if (this.passwordType === HIDE_TYPE) {
+      this.passwordType = SHOW_TYPE;
+      this.passwordTypeButtonName = HIDE_PASS;
+    } else {
+      this.passwordType = HIDE_TYPE;
+      this.passwordTypeButtonName = SHOW_PASS;
+    }
+  }
 
   @action
   async signIn() {
