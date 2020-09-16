@@ -17,6 +17,7 @@ export default class PostFormComponent extends Component {
   @tracked title = "";
   @tracked body = "";
   @tracked buttonText = "Submit";
+  @tracked successMessage = "";
   @tracked titleBoxColor = BOX_DEFAULT_COLOR;
   @tracked bodyBoxColor = BOX_DEFAULT_COLOR;
   @tracked titlePlaceholderMessage = TITLE_PLACEHOLDER_DEFAULT_MESSAGE;
@@ -40,6 +41,7 @@ export default class PostFormComponent extends Component {
       this.titlePlaceholderMessage = TITLE_PLACEHOLDER_DEFAULT_MESSAGE;
       this.bodyPlaceholderMessage = PLACEHOLDER_ERROR_MESSAGE;
     } else {
+      this.buttonText = "Loading...";
       this.titleBoxColor = BOX_DEFAULT_COLOR;
       this.bodyBoxColor = BOX_DEFAULT_COLOR;
       this.titlePlaceholderMessage = TITLE_PLACEHOLDER_DEFAULT_MESSAGE;
@@ -54,6 +56,11 @@ export default class PostFormComponent extends Component {
       await post.save();
       this.title = "";
       this.body = "";
+      this.buttonText = "Submit";
+      this.successMessage = "Your post has been submitted";
+      setTimeout(() => {
+        this.successMessage = "";
+      }, 3000);
     }
   }
 }

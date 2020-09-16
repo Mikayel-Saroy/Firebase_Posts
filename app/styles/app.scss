@@ -177,11 +177,15 @@ body {
     font-size: 18px;
   }
 
-  .add_post_button {
-    button {
+  .add_post_button button {
       @include button_sample;
       margin: 0 10px 15px 570px;
-    }
+  }
+
+  .success_message {
+    position: absolute;
+    margin: 327px 0 0 50px;
+    color: $primary-color;
   }
 }
 
