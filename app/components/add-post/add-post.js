@@ -12,14 +12,14 @@ export default class PostFormComponent extends Component {
   @tracked body;
 
   @action
-  async onSubmit() {
+  async submitThePost() {
     const user = this.session.data.authenticated.user;
 
     const { title, body } = this;
     const post = this.store.createRecord('post', {
       title,
       body,
-      userEmail: user.email
+      userEmail: user.email,
     });
     await post.save();
     this.title = "";

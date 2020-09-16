@@ -1,11 +1,15 @@
-<div class="row py-5">
-  <div class="col">
-    <h4>Create new post</h4>
-    <BsForm @formLayout="vertical" @model={{this}} @onSubmit={{fn this.onSubmit}} as |form|>
-      <form.element @controlType="text" @label="Title" placeholder="Title" @property="title" required />
-      <form.element @controlType="textarea" @label="Body" placeholder="Post Body" @property="body" />
-      <form.submitButton>Submit Post</form.submitButton>
-    </BsForm>
+<div class="add_post">
+  <div class="add_post_headline">
+    <h3>Create a new post</h3>
+  </div>
+  <div class="add_post_input_title">
+    <Input @value={{this.title}} placeholder="Enter the title"/>
+  </div>
+  <div class="add_post_input_body">
+    <Textarea @value={{this.body}} placeholder="Enter the body"/>
+  </div>
+  <div class="add_post_button">
+    <button {{on "click" this.submitThePost}}>Submit</button>
   </div>
 </div>
 

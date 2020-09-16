@@ -1,9 +1,12 @@
 $black-color: rgb(21, 21, 21);
 $primary-color: #005a9e;
 $secondary-color: #2b88d8;
-$tertiary-color: #B0D0E8;
+$secondary-tertiary-color: #62a0d0;
+$tertiary-color: #b0d0e8;
 $quaternary-color: #eff6fc;
 
+
+// Mixins
 @mixin header_icons_sample {
   height: 35px;
   margin: 10px 0 0 15px;
@@ -23,18 +26,49 @@ $quaternary-color: #eff6fc;
   }
 }
 
+@mixin button_sample {
+  background-color: $secondary-color;
+  border-radius: 30px;
+  height: 30px;
+  width: 100px;
+  outline: none;
+  font-size: 16px;
+  color: $black-color;
+  &:hover {
+    background-color: $secondary-tertiary-color;
+  }
+}
+
+
+// General Styles
 body {
   margin: 0;
   padding: 0;
   border: 0;
   background-color: $quaternary-color;
+
+  a {
+    text-decoration: none;
+  }
+
+  input, textarea {
+    outline: none;
+    color: $black-color;
+    font-family: Courier, serif;
+    background-color: $quaternary-color;
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    resize: none;
+  }
 }
 
+
+// Component -> Get-Started -> Header
 .header {
   background-color: $primary-color;
   height: 75px;
 
-  .home_button, .my_profile_button, .add_post_button {
+  .header_home_button, .header_my_profile_button, .header_add_post_button {
     @include header_icons_sample;
   }
 
@@ -61,17 +95,20 @@ body {
   }
 }
 
+
+// Component -> ### -> Posts
 .show_post {
-  margin: 20px auto 10px auto;
+  margin: 25px auto 25px auto;
   width: 700px;
   border: 1px solid $primary-color;
+  background-color: $tertiary-color;
   border-radius: 10px;
 
   .post_title {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-top: -33px;
-    height: 31px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-top: -32px;
+    height: 35px;
     background-color: $secondary-color;
 
     a {
@@ -80,8 +117,8 @@ body {
       color: $quaternary-color;
 
       h5 {
-        margin-left: 15px;
-        padding-top: 4px;
+        margin-left: 25px;
+        padding-top: 8px;
       }
 
       &:hover {
@@ -95,7 +132,66 @@ body {
     font-size: 19px;
 
     p {
-      margin-left: 10px;
+      margin: 10px 10px 10px 15px;
+      color: $black-color;
     }
   }
 }
+
+
+// Component -> ### -> Add-Post
+.add_post {
+  margin: 25px auto 10px auto;
+  width: 700px;
+  background-color: $tertiary-color;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+
+  .add_post_headline {
+    margin-top: -22px;
+    height: 50px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: $secondary-color;
+
+    h3 {
+      padding-top: 12px;
+      text-align: center;
+      color: $quaternary-color;
+      font-size: 22px;
+    }
+  }
+
+  .add_post_input_title input {
+    margin: 20px 25px 0 25px;
+    height: 30px;
+    width: 650px;
+    font-size: 18px;
+  }
+
+  .add_post_input_body textarea {
+    margin: 5px 25px 20px 25px;
+    height: 210px;
+    width: 650px;
+    font-size: 18px;
+  }
+
+  .add_post_button {
+    button {
+      @include button_sample;
+      margin: 0 10px 15px 570px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
