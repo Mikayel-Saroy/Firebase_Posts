@@ -1,0 +1,19 @@
+<div class="add_post">
+  <p class="success_message">{{this.successMessage}}</p>
+  <div class="add_post_headline">
+    <h3>Edit your post</h3>
+  </div>
+  <div class="add_post_input_title">
+    <Input @value={{this.local.currentTitle}} placeholder={{this.titlePlaceholderMessage}}
+           style="border: 1px solid {{this.titleBoxColor}}; ::placeholder.color: 'red'"/>
+  </div>
+  <div class="add_post_input_body">
+    <Textarea @value={{this.local.currentBody}} placeholder={{this.bodyPlaceholderMessage}}
+              style="border: 1px solid {{this.bodyBoxColor}};"/>
+  </div>
+  <div class="add_post_button">
+    <button {{on "click" this.editThePost}}>{{this.buttonText}}</button>
+  </div>
+</div>
+
+{{yield}}

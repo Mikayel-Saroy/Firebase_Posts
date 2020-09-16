@@ -10,7 +10,7 @@
 </div>
 
 {{#if this.local.isMyPost}}
-  <LinkTo @route="authenticated.posts">
+  <LinkTo @route="authenticated.edit-post" @model={{this.local.currentID}}>
     <div class="edit_button">
       <button {{on "click" this.funcA}}>Edit</button>
     </div>
