@@ -3,13 +3,16 @@
     <h3>Create a new post</h3>
   </div>
   <div class="add_post_input_title">
-    <Input @value={{this.title}} placeholder="Enter the title"/>
+    <Input @value={{this.title}} placeholder={{this.titlePlaceholderMessage}}
+           style="border: 1px solid {{this.titleBoxColor}}; ::placeholder.color: 'red'"/>
+
   </div>
   <div class="add_post_input_body">
-    <Textarea @value={{this.body}} placeholder="Enter the body"/>
+    <Textarea @value={{this.body}} placeholder={{this.bodyPlaceholderMessage}}
+              style="border: 1px solid {{this.bodyBoxColor}};"/>
   </div>
   <div class="add_post_button">
-    <button {{on "click" this.submitThePost}}>Submit</button>
+    <button {{on "click" this.submitThePost}}>{{this.buttonText}}</button>
   </div>
 </div>
 
