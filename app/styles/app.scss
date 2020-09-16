@@ -1,2 +1,101 @@
+$black-color: rgb(21, 21, 21);
+$primary-color: #005a9e;
+$secondary-color: #2b88d8;
+$tertiary-color: #B0D0E8;
+$quaternary-color: #eff6fc;
 
-@import "ember-bootstrap/bootstrap";
+@mixin header_icons_sample {
+  height: 35px;
+  margin: 10px 0 0 15px;
+  padding: 10px;
+  border-radius: 50%;
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+@mixin header_link_buttons {
+  color: $tertiary-color;
+  text-decoration: none;
+  font-size: 21px;
+  &:hover {
+    color: $quaternary-color;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: $quaternary-color;
+}
+
+.header {
+  background-color: $primary-color;
+  height: 75px;
+
+  .home_button, .my_profile_button, .add_post_button {
+    @include header_icons_sample;
+  }
+
+  .logout_button {
+    position: absolute;
+    left: 100%;
+    margin: -66px 0 0 -100px;
+
+    a {
+      @include header_link_buttons;
+    }
+  }
+
+  .log_in_button {
+    & .active {
+      color: $quaternary-color;
+    }
+
+    a {
+      margin: 3px 0 0 30px;
+      float: left;
+      @include header_link_buttons;
+    }
+  }
+}
+
+.show_post {
+  margin: 20px auto 10px auto;
+  width: 700px;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+
+  .post_title {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: -33px;
+    height: 31px;
+    background-color: $secondary-color;
+
+    a {
+      font-size: 23px;
+      text-decoration: none;
+      color: $quaternary-color;
+
+      h5 {
+        margin-left: 15px;
+        padding-top: 4px;
+      }
+
+      &:hover {
+        color: $tertiary-color;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .post_body {
+    font-size: 19px;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+}

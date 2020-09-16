@@ -14,5 +14,6 @@ Router.map(function() {
     this.route('my-profile');
     this.route('posts');
     this.route('add-post');
+    this.route('show-post', {path: '/:post_id'});
   });
 });

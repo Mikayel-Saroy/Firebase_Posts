@@ -22,13 +22,14 @@ module.exports = function(environment) {
       // when it is created
     },
     firebase: {
-      apiKey: "AIzaSyCjo6MzYoplIFbbpCi4AW1sq5vRqWLmecM",
-      authDomain: "ember-fire-tuts.firebaseapp.com",
-      databaseURL: "https://ember-fire-tuts.firebaseio.com",
-      projectId: "ember-fire-tuts",
-      storageBucket: "ember-fire-tuts.appspot.com",
-      messagingSenderId: "611619811841",
-      appId: "1:611619811841:web:4b1956f14a7787106bc600"
+      apiKey: "AIzaSyAIArH8gDWH5glngddSJFoKq5s3Ra8kJyY",
+      authDomain: "ember-firebase-posts.firebaseapp.com",
+      databaseURL: "https://ember-firebase-posts.firebaseio.com",
+      projectId: "ember-firebase-posts",
+      storageBucket: "ember-firebase-posts.appspot.com",
+      messagingSenderId: "724477555940",
+      appId: "1:724477555940:web:9629cfec1e65dade37a8f1",
+      measurementId: "G-S7KF4TFECN"
     }
   };
 

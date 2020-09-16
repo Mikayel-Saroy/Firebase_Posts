@@ -1,11 +1,12 @@
-<div class="row my-2">
-  <div class="col-sm-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{@post.title}}</h5>
-        <p class="card-text">{{@post.body}}</p>
-        <a href="#" class="btn btn-primary">See post</a>
-      </div>
-    </div>
+<div class="show_post">
+  <div class="post_title">
+    <LinkTo @route="authenticated.show-post" @model={{@post.id}}>
+      <h5 {{on "click" this.getCurrentData}}>
+        {{@post.title}}
+      </h5>
+    </LinkTo>
+  </div>
+  <div class="post_body">
+    <p>{{@post.body}}</p>
   </div>
 </div>

@@ -1,0 +1,31 @@
+<div class="header">
+  {{#if this.session.isAuthenticated}}
+    <div>
+      <div>
+        <LinkTo @route="authenticated.posts">
+          <img class="home_button" src="assets/images/home.png" alt="Posts"/>
+        </LinkTo>
+        <LinkTo @route="authenticated.my-profile">
+          <img class="my_profile_button" src="assets/images/my-profile.png" alt="My Profile"/>
+        </LinkTo>
+        <LinkTo @route="authenticated.add-post">
+          <img class="add_post_button" src="assets/images/plus.png" alt="Add Posts"/>
+        </LinkTo>
+      </div>
+      <div class="logout_button">
+        <LinkTo @route="authenticated.my-profile">
+          <p {{on 'click' (fn this.logout)}}>Logout</p>
+        </LinkTo>
+      </div>
+    </div>
+  {{else}}
+    <div class="log_in_button">
+      <LinkTo @route="sign-in">
+        <p>Sign In</p>
+      </LinkTo>
+      <LinkTo @route="sign-up">
+        <p>Sign Up</p>
+      </LinkTo>
+    </div>
+  {{/if}}
+</div>
