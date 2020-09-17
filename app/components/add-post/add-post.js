@@ -29,10 +29,10 @@ export default class PostFormComponent extends Component {
   @action
   trimEmptyBoxes(title, body) {
     if (title) {
-      this.local.currentTitle = '';
+      this.title = '';
     }
     if (body) {
-      this.local.currentBody = '';
+      this.body = '';
     }
   }
 

@@ -14,8 +14,8 @@ Router.map(function() {
     this.route('my-profile');
     this.route('posts');
     this.route('add-post');
-    this.route('show-post', {path: '/:post_id'});
+    this.route('show-post', {path: 'posts/:post_id'});
     // eslint-disable-next-line ember/routes-segments-snake-case
-    this.route('edit-post', {path: '/:post_id/edit-post'});
+    this.route('edit-post', {path: '/posts/:post_id/edit'});
   });
 });

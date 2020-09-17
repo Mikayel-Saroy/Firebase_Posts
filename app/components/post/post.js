@@ -11,11 +11,11 @@ export default class PostComponent extends Component {
     this.local.currentTitle = this.args.post.title;
     this.local.currentBody = this.args.post.body;
     this.local.isMyPost = this.local.myEmail === this.local.currentEmail;
-    console.log(this.local.currentEmail);
-    console.log(this.local.currentID);
-    console.log(this.local.currentTitle);
-    console.log(this.local.currentBody);
-    console.log(`MY EMAIL: ${this.local.myEmail}`);
-    console.log(`IS MY POST: ${this.local.isMyPost}`);
+    // console.log(this.local.currentEmail);
+    // console.log(this.local.currentID);
+    // console.log(this.local.currentTitle);
+    // console.log(this.local.currentBody);
+    // console.log(`MY EMAIL: ${this.local.myEmail}`);
+    // console.log(`IS MY POST: ${this.local.isMyPost}`);
   }
 }
